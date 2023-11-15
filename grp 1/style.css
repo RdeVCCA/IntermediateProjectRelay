@@ -43,7 +43,7 @@ body {
   grid-row: span 1;
 }
 
-.meth_product {
+.salt_product {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -124,6 +124,10 @@ header a:hover {
   color: #333;
 }
 
-.meth_product {
+.salt_product {
   margin-left: 5%;
+}
+
+.banner{
+  text-align: center;
 }
