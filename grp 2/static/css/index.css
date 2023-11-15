@@ -1,0 +1,23 @@
+#container {
+    position: relative;
+    width: 700px; /* Adjust based on your image sizes */
+    height: 700px; /* Adjust based on your image sizes */
+    transform-origin: 0% 100%; /* Pivot at the bottom-left corner */
+    border-width: 10px;
+}
+
+#arm {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotate(90deg); /* Rotate the arm 90 degrees */
+    transform-origin: bottom left; /* Set the pivot point for rotation */
+}
+
+
+#sword {
+    position: absolute;
+    /* Adjust these values to align the sword with the arm's position */
+    bottom: -160px; /* Example: 20px above the bottom of the container */
+    left: 330px; /* Example: 50px from the left of the container */
+}
