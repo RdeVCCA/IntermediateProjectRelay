@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,7 +7,7 @@
     <!-- one player controls a gun while another controls a sword as they defend a character in the center against enemies -->
     <body style="width: 100vh; height: 100vh; margin: 0; margin-left: auto; margin-right: auto; display: block; overflow: hidden; position: relative;">
         <div id="enemies">
-            <img src="static/assets/enemy.png" id="enemy-base" alt="enemy" style="position: absolute; top: 0%; left: 0%; display: none;">
+            <img src="static/assets/enemy.png" id="enemy-base" alt="enemy" style="position: absolute; top: 0%; left: 0%; display: none; transform: translate(-50%, -50%);">
         </div>
         <div id = "user">
             <img src = "static/assets/user.png" style="position: absolute; top: 45%; left: 5%; width: 5em;">
@@ -40,18 +41,19 @@
             node.style.left = `${randint(0, 100)}%`;
             document.getElementById("enemies").appendChild(node);
         }
-        for (let i = 0; i < 100; i++) { makeEnemy(); }
+        for (let i = 0; i < 20; i++) { makeEnemy(); }
         function moveEnemyToCenter(howMuch) {
             for (let node of document.getElementById("enemies").children) {
                 let top = parseInt(node.style.top.substring(0, node.style.top.length - 1));
                 if (top > 50) { top -= howMuch; } else if (top < 50) { top += howMuch }
                 let left = parseInt(node.style.left.substring(0, node.style.left.length - 1));
                 if (left > 50) { left -= howMuch; } else if (left < 50) { left += howMuch }
-                console.log(node.style.top.substring(0, node.style.top.length - 1), node.style.left.substring(0, node.style.left.length - 1)); // nan lmao
+                console.log(node.style.top.substring(0, node.style.top.length - 1), node.style.left.substring(0, node.style.left.length - 1));
                 node.style.top = `${top}%`;
                 node.style.left = `${left}%`;
             }
         }
+        setInterval(function () {moveEnemyToCenter(1)}, 100);
 
         function damagetaken(){
             if ((position_x - node.style.left) < 10 || (node.style.left - position_x) < 10 && (position_y - node.style.top) < 10 || (node.style.top - position_y) < 10){
