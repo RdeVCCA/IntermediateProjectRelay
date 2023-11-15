@@ -1,18 +1,14 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joined Together</title>
-    <link rel="stylesheet" href="grp 2\static\css\index.css">
+        <title>Joined together</title>
     </head>
-    <body id="body" style="width: 100vh; height: 100vh; margin: 0; margin-left: auto; margin-right: auto; display: block; overflow: hidden; position: relative;">
-        <div id="container">
-            <img src="grp 2\static\assets\arm.png" id="arm" alt="Arm">
-            <img src="grp 2\static\assets\sword.png" id="sword" alt="Sword">
+    <!-- one player controls a gun while another controls a sword as they defend a character in the center against enemies -->
+    <body style="width: 100vh; height: 100vh; margin: 0; margin-left: auto; margin-right: auto; display: block; overflow: hidden; position: relative;">
+        <div id="enemies">
+            <img src="static/assets/enemy.png" id="enemy-base" alt="enemy" style="position: absolute; top: 0%; left: 0%; display: none;">
         </div>
-        <script src="grp 2\static\js\index.js"></script>
-        <img src="static/assets/enemy.png" id="enemy-base" alt="enemy" style="position: absolute; top: 0; left: 0; display: none;">
     </body>
     <script>
         function randint(min, max) {
@@ -23,9 +19,23 @@
             node.style.display = "block";
             node.style.top = `${randint(0, 100)}%`;
             node.style.left = `${randint(0, 100)}%`;
-            document.getElementById("body").appendChild(node);
+            document.getElementById("enemies").appendChild(node);
         }
         for (let i = 0; i < 100; i++) { makeEnemy(); }
+        function moveEnemyToCenter(howMuch) {
+            for (let node of document.getElementById("enemies").children) {
+                let top = parseInt(node.style.top.substring(0, node.style.top.length - 1));
+                if (top > 50) { top -= howMuch; } else if (top < 50) { top += howMuch }
+                let left = parseInt(node.style.left.substring(0, node.style.left.length - 1));
+                if (left > 50) { left -= howMuch; } else if (left < 50) { left += howMuch }
+                console.log(node.style.top.substring(0, node.style.top.length - 1), node.style.left.substring(0, node.style.left.length - 1)); // nan lmao
+                node.style.top = `${top}%`;
+                node.style.left = `${left}%`;
+            }
+        }
+        setInterval(function () {moveEnemyToCenter(2)}, 1000);
     </script>
 </html>
-
+=======
+<!DOCTYPE html>
+>>>>>>> 1c604ce (html update test)
