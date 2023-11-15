@@ -71,6 +71,36 @@ body {
     transform: translateX(-200vw);
   }
 }
+.image-container {
+  position: relative;
+  display: inline-block; /* Or 'block' depending on your layout */
+}
+
+.image-container img.border {
+  display: block; /* Ensures the image takes up its own line */
+  width: 100%; /* Adjust as needed */
+  height: auto; /* Maintains aspect ratio */
+}
+
+.image-container img.overlay {
+  position: absolute;
+  bottom: -1rem;
+  right: -5rem;
+  width: 10rem; /* Adjust to your desired size */
+  height: 5rem; /* Adjust to maintain aspect ratio */
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-100px); }
+  50% { transform: translateX(100px); }
+  75% { transform: translateX(-100px); }
+}
+
+.shake-animation {
+  animation: shake 0.5s linear;
+}
+
 
 #title {
   font-size: 3em;
