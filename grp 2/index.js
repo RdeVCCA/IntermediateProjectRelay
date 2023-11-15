@@ -1,15 +1,19 @@
 document.addEventListener('keydown', function(event) {
     const container = document.getElementById('container');
-    let currentRotation = parseFloat(container.style.transform.replace(/[^\d.]/g, '')) || 0;
+    // Retrieve the current rotation from the container's transform property
+    let currentRotation = container.style.transform.replace(/[^0-9.]/g, '') || 0;
+    currentRotation = parseFloat(currentRotation);
 
     if (event.key === 'O') {
-        currentRotation -= 10; // rotate anti-clockwise
+        currentRotation -= 10; // Rotate anti-clockwise
     } else if (event.key === 'L') {
-        currentRotation += 10; // rotate clockwise
+        currentRotation += 10; // Rotate clockwise
     }
 
+    // Apply the updated rotation to the container
     container.style.transform = `rotate(${currentRotation}deg)`;
 });
+
 while (True){ //enemy will move towards player
     var position_x = document.getElementById("player").style.left
     var position_y = document.getElementById("player").style.top
