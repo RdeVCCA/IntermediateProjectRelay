@@ -3,7 +3,20 @@
     <head>
         <title>Joined together</title>
     </head>
-    <body>
-        <h1>header</h1>
+    <body id="body" style="width: 100vh; height: 100vh; margin: 0; margin-left: auto; margin-right: auto; display: block; overflow: hidden; position: relative;">
+        <img src="static/assets/enemy.png" id="enemy-base" alt="enemy" style="position: absolute; top: 0; left: 0; display: none;">
     </body>
+    <script>
+        function randint(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function makeEnemy() {
+            let node = document.getElementById("enemy-base").cloneNode();
+            node.style.display = "block";
+            node.style.top = `${randint(0, 100)}%`;
+            node.style.left = `${randint(0, 100)}%`;
+            document.getElementById("body").appendChild(node);
+        }
+        for (let i = 0; i < 100; i++) { makeEnemy(); }
+    </script>
 </html>
