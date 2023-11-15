@@ -23,11 +23,11 @@
         for (let i = 0; i < 100; i++) { makeEnemy(); }
         function moveEnemyToCenter(howMuch) {
             for (let node of document.getElementById("enemies").children) {
-                let top = parseInt(node.style.top.substring(0, node.style.top - 1));
+                let top = parseInt(node.style.top.substring(0, node.style.top.length - 1));
                 if (top > 50) { top -= howMuch; } else if (top < 50) { top += howMuch }
-                let left = parseInt(node.style.left.substring(0, node.style.left - 1));
+                let left = parseInt(node.style.left.substring(0, node.style.left.length - 1));
                 if (left > 50) { left -= howMuch; } else if (left < 50) { left += howMuch }
-                console.log(node.style.top.substring(0, node.style.top - 1), node.style.left.substring(0, node.style.left - 1)); // nan lmao
+                console.log(node.style.top.substring(0, node.style.top.length - 1), node.style.left.substring(0, node.style.left.length - 1)); // nan lmao
                 node.style.top = `${top}%`;
                 node.style.left = `${left}%`;
             }
