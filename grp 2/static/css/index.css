@@ -21,3 +21,13 @@
     bottom: -160px; /* Example: 20px above the bottom of the container */
     left: 330px; /* Example: 50px from the left of the container */
 }
+
+body {
+    background-image: url('static/assets/background.png');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
