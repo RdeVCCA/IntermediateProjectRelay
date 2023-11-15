@@ -30,6 +30,10 @@ body {
   padding: 5px;
 }
 
+.border:hover{
+  box-shadow: 5px 5px 5px grey;
+}
+
 .grid-container {
   display: grid;
   row-gap: 0.25rem;
@@ -50,6 +54,21 @@ body {
   align-items: center;
   margin-top: 2em;
   margin-bottom: 2em;
+}
+
+.section{
+  margin-left: 1vw;
+  width: 90%;
+}
+
+#red{
+  color:red;
+}
+
+.header{
+  background-color: #82a6e0;
+  border-radius: 1rem;
+  padding: 0.5rem;
 }
 
 body {
@@ -103,6 +122,7 @@ header nav {
   width: 80%;
   margin: auto;
   overflow: hidden;
+  margin-left: 1wv;
 }
 
 

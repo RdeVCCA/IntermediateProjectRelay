@@ -1,3 +1,5 @@
+
+<!DOCTYPE html>
 <html>
     <head>
         <title>Joined together</title>
@@ -7,8 +9,28 @@
         <div id="enemies">
             <img src="static/assets/enemy.png" id="enemy-base" alt="enemy" style="position: absolute; top: 0%; left: 0%; display: none; transform: translate(-50%, -50%);">
         </div>
+        <div id = "user">
+            <img src = "static/assets/user.png" style="position: absolute; top: 45%; left: 5%; width: 5em;">
+        </div>
     </body>
+    <style>
+        body {
+            background-color: rgb(44, 44, 44);
+            background-image: url('static/assets/background.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>    
     <script>
+        var hp = 100;
+        var gunATK = 100;
+        var swordATK = 100;
         function randint(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
@@ -32,5 +54,14 @@
             }
         }
         setInterval(function () {moveEnemyToCenter(1)}, 100);
+
+        function damagetaken(){
+            if ((position_x - node.style.left) < 10 || (node.style.left - position_x) < 10 && (position_y - node.style.top) < 10 || (node.style.top - position_y) < 10){
+                hp -= 1
+            }
+        }
+
+        setInterval(function () {moveEnemyToCenter(2)}, 1000);
+        setInterval(function () {damagetaken()}, 3000);
     </script>
 </html>
