@@ -1,6 +1,5 @@
 html {
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
 }
 
 @font-face {
@@ -13,7 +12,8 @@ html {
 body {
   font-family: 'Outfit', sans-serif;
   background: linear-gradient(180deg, #EFEDED 0%, rgba(162, 210, 226, 0.75) 10%, rgba(135, 192, 202, 0.67) 18%, rgba(108, 168, 223, 0.59) 42%, rgba(90, 164, 174, 0.50) 61%, rgba(80, 146, 150, 0.42) 81%, rgba(16, 139, 150, 0.33) 100%);
-  width: 100vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
 #title {
@@ -56,7 +56,6 @@ body {
   font-family: Outfit, sans-serif;
   line-height: 1.6;
   margin: 0;
-  padding: 0;
   background: linear-gradient(180deg, #EFEDED 0%, rgba(162, 210, 226, 0.75) 10%, rgba(135, 192, 202, 0.67) 18%, rgba(108, 168, 223, 0.59) 42%, rgba(90, 164, 174, 0.50) 61%, rgba(80, 146, 150, 0.42) 81%, rgba(16, 139, 150, 0.33) 100%);
 }
 
@@ -65,6 +64,8 @@ header {
   color: #fff;
   padding-top: 30px;
   min-height: 70px;
+  width: 100vw;
+  margin-left: -12.5%;
   border-bottom: #ffc107 3px solid;
 }
 
