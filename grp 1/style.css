@@ -1,0 +1,128 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('Fonts/Outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: linear-gradient(180deg, #EFEDED 0%, rgba(162, 210, 226, 0.75) 10%, rgba(135, 192, 202, 0.67) 18%, rgba(108, 168, 223, 0.59) 42%, rgba(90, 164, 174, 0.50) 61%, rgba(80, 146, 150, 0.42) 81%, rgba(16, 139, 150, 0.33) 100%);
+  width: 100vw;
+}
+
+#title {
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.border {
+  border: 2px solid black;
+  text-align: center;
+  padding: 5px;
+}
+
+.grid-container {
+  display: grid;
+  row-gap: 0.25rem;
+  column-gap: 0.25rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-item1 {
+  text-align: center;
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.meth_product {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+body {
+  font-family: Outfit, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #EFEDED 0%, rgba(162, 210, 226, 0.75) 10%, rgba(135, 192, 202, 0.67) 18%, rgba(108, 168, 223, 0.59) 42%, rgba(90, 164, 174, 0.50) 61%, rgba(80, 146, 150, 0.42) 81%, rgba(16, 139, 150, 0.33) 100%);
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: #ffc107 3px solid;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+header ul {
+  padding: 0;
+  list-style: none;
+}
+
+header li {
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+header #branding {
+  float: left;
+}
+
+header #branding h1 {
+  margin: 0;
+}
+
+header nav {
+  float: right;
+  margin-top: 10px;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+header .highlight,
+header .current a {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+header a:hover {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+.about-info {
+  margin-top: 50px;
+  background: #fff;
+  padding: 20px;
+  color: #333;
+}
+
+.meth_product {
+  margin-left: 5%;
+}
